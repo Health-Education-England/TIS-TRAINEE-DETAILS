@@ -9,6 +9,14 @@ pipeline {
                 }
             }
         }
+        
+        stage ('Step 2') {
+            steps{
+                sh 'pwd'
+                sh 'ls'
+                sh 'scp /home/ubuntu/filesend ubuntu@172.26.1.47:received'
+            }
+        }
 
              
     }
