@@ -4,7 +4,7 @@ pipeline {
                
         stage ('Step 1') {
             steps{
-                sshagent(credentials : ['6207d970-1903-41f2-9e11-fa96ec19914e']) {
+                sshagent(credentials : ['key']) {
                     sh 'ssh -o StrictHostKeyChecking=no ubuntu@172.26.1.47 touch file100'
                 }
             }
