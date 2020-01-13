@@ -13,7 +13,7 @@ pipeline {
         stage ('Step 2') {
             steps{
                 sh 'ls /home/ubuntu'
-                sh 'scp ~/filesend ubuntu@172.26.1.47:filesend-received -v'
+                sh 'scp /home/ubuntu/filesend ubuntu@172.26.1.47:filesend-received -v'
             }
         }
              
