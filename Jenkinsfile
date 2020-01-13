@@ -12,9 +12,11 @@ pipeline {
         
         stage ('Step 2') {
             steps{
-                sh 'pwd'
-                sh 'ls'
-                sh 'scp filesend ubuntu@172.26.1.47:received'
+                sshagent(credentials : ['key']) {
+                    sh 'pwd'
+                    sh 'ls'
+                    sh 'scp filesend ubuntu@172.26.1.47:received'
+                }                
             }
         }
 
