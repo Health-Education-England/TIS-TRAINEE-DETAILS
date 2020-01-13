@@ -14,7 +14,7 @@ pipeline {
             steps{
                 sh 'pwd'
                 sh 'ls'
-                sh 'scp /home/ubuntu/filesend ubuntu@172.26.1.47:received'
+                sh 'scp filesend ubuntu@172.26.1.47:received'
             }
         }
 
