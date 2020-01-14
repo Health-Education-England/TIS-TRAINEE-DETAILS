@@ -14,7 +14,7 @@ pipeline {
         stage ('Install Docker') {
             steps{
                 sshagent(credentials : ['key']) {
-                    sh 'ansible-playbook -v /home/ubuntu/TIS-DEVOPS/ansible/tasks/docker-upgrade.yml -i /home/ubuntu/TIS-DEVOPS/ansible/inventory/simple-inventory.ini'
+                    sh 'ansible-playbook /home/ubuntu/TIS-DEVOPS/ansible/tasks/docker-upgrade.yml -i /home/ubuntu/TIS-DEVOPS/ansible/inventory/simple-inventory.ini'
                 }
             }
         }
