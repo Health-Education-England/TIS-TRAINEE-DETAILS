@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import uk.nhs.hee.trainee.details.dto.ContactDetailsDto;
 import uk.nhs.hee.trainee.details.mapper.ContactDetailsMapper;
 import uk.nhs.hee.trainee.details.model.ContactDetails;
+import uk.nhs.hee.trainee.details.query.PersonDAL;
 import uk.nhs.hee.trainee.details.service.ContactDetailsService;
 
 @RestController
@@ -25,6 +26,8 @@ public class ContactDetailsResource {
   private ContactDetailsService contactDetailsService;
   @Autowired
   private ContactDetailsMapper contactDetailsMapper;
+  @Autowired
+  private PersonDAL personDAL;
 
   /**
    * Get a contact details record with a given ID.
@@ -37,6 +40,7 @@ public class ContactDetailsResource {
       @PathVariable(name = "id") String contactDetailsId) {
     log.trace("Contact Details of a trainee by contactDetailsId {}", contactDetailsId);
     ContactDetails contactDetails = contactDetailsService.getContactDetails(contactDetailsId);
+    personDAL.findById("1");
     return contactDetails;
   }
 
