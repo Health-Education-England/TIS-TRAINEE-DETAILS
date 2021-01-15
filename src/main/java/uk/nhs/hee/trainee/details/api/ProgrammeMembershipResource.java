@@ -32,7 +32,7 @@ public class ProgrammeMembershipResource {
    *
    * @param traineeTisId The ID of the trainee to update.
    * @param dto   The Programme Membership details to update with.
-   * @return The updated ProgrammeMembership.
+   * @return The updated Programme Membership.
    */
 
 
