@@ -39,13 +39,10 @@ public class ProgrammeMembershipService {
 
     for (ProgrammeMembership existingProgrammeMembership : existingProgrammeMemberships) {
 
-      //Optional.ofNullable(
-      if (existingProgrammeMembership.getTisId() != null) {
-        if (existingProgrammeMembership.getTisId().equals(programmeMembership.getTisId())) {
-          mapper.updateProgrammeMembership(existingProgrammeMembership, programmeMembership);
-          repository.save(traineeProfile);
-          return Optional.of(existingProgrammeMembership);
-        }
+      if (java.util.Objects.equals(existingProgrammeMembership.getTisId(), programmeMembership.getTisId())) {
+        mapper.updateProgrammeMembership(existingProgrammeMembership, programmeMembership);
+        repository.save(traineeProfile);
+        return Optional.of(existingProgrammeMembership);
       }
     }
 
