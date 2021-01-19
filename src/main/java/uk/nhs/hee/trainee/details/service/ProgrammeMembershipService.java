@@ -1,6 +1,7 @@
 package uk.nhs.hee.trainee.details.service;
 
     import java.util.List;
+    import java.util.Objects;
     import java.util.Optional;
     import org.springframework.stereotype.Service;
     import uk.nhs.hee.trainee.details.mapper.ProgrammeMembershipMapper;
@@ -39,7 +40,7 @@ public class ProgrammeMembershipService {
 
     for (ProgrammeMembership existingProgrammeMembership : existingProgrammeMemberships) {
 
-      if (java.util.Objects.equals(existingProgrammeMembership.getTisId(), programmeMembership.getTisId())) {
+      if (Objects.equals(existingProgrammeMembership.getTisId(), programmeMembership.getTisId())) {
         mapper.updateProgrammeMembership(existingProgrammeMembership, programmeMembership);
         repository.save(traineeProfile);
         return Optional.of(existingProgrammeMembership);
